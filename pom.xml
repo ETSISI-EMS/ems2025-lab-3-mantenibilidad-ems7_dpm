@@ -19,6 +19,8 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<sonar.organization>etsisi-ems</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.organization>etsisi-ems</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<dependencies>

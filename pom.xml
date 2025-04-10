@@ -19,7 +19,7 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<sonar.organization>etsisi-ems</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.organization>etsisi-ems</sonar.organization>
+		<sonar.organization>ETSISI-EMS_ems2025-lab-3-mantenibilidad-ems7_dpm_bc77f9cf-1a0d-4bba-be4b-f96604a2d4db</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 

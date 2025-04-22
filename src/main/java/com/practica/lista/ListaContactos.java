@@ -180,9 +180,30 @@ public class ListaContactos {
 	 * coordenadas, no tienen una utilidad en sí misma, más allá de comprobar que
 	 * nuestra lista funciona de manera correcta.
 	 */
+	public int[] contarEntreDosInstantes(FechaHora inicio, FechaHora fin) {
+
+		NodoTemporal aux = lista;
+		int[] cont = {0,0};
+		if(this.size==0) {
+            return cont;
+        }
+		int a;
+		while (aux!=null) {
+			if (aux.getFecha().compareTo(inicio)>=0 && aux.getFecha().compareTo(fin)<=0) {
+				NodoPosicion nodo = aux.getListaCoordenadas();
+				while(nodo!=null) {
+					cont[0] = cont[0] + 1;
+					cont[1] = cont[1] + nodo.getNumPersonas();
+					nodo = nodo.getSiguiente();
+				}
+			aux=aux.getSiguiente();
+
+		}
+		return cont;
+	}
+	/**
 	public int numPersonasEntreDosInstantes(FechaHora inicio, FechaHora fin) {
-		if(this.size==0)
-			return 0;
+		if(this.size==0) { return 0; }
 		NodoTemporal aux = lista;
 		int cont = 0;
 		int a;
@@ -225,7 +246,7 @@ public class ListaContactos {
 		}
 		return cont;
 	}
-	
+	*/
 	
 	
 	@Override

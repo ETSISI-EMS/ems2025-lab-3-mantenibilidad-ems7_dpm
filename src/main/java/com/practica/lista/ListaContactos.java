@@ -199,6 +199,15 @@ public class ListaContactos {
 		}
 		return cont;
 	}
+	public int numPersonasEntreDosInstantes(FechaHora inicio, FechaHora fin) {
+		int[] cont = contarEntreDosInstantes(inicio, fin);
+		return cont[1];
+	}
+	public int numNodosCoordenadaEntreDosInstantes(FechaHora inicio, FechaHora fin) {
+		int[] cont = contarEntreDosInstantes(inicio, fin);
+		return cont[0];
+	}
+
 	/**
 	public int numPersonasEntreDosInstantes(FechaHora inicio, FechaHora fin) {
 		if(this.size==0) { return 0; }

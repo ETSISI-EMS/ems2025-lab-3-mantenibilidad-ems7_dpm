@@ -193,9 +193,9 @@ public class ListaContactos {
 					cont[1] = cont[1] + nodo.getNumPersonas();
 					nodo = nodo.getSiguiente();
 				}
-				aux = aux.getSiguiente();
 
 			}
+			aux = aux.getSiguiente();
 		}
 		return cont;
 	}

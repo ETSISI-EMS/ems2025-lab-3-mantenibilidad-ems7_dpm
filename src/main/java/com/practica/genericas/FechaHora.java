@@ -8,13 +8,14 @@ import java.util.Locale;
 public class FechaHora implements Comparable<FechaHora>{
 	public class Fecha {
 		private int dia, mes, anio;
-		 
+
 		public Fecha(int dia, int mes, int anio) {
 			super();
 			this.dia = dia;
 			this.mes = mes;
 			this.anio = anio;
 		}
+
 
 		public int getDia() {
 			return dia;
@@ -85,7 +86,7 @@ public class FechaHora implements Comparable<FechaHora>{
 
 	Fecha fecha;
 	Hora hora;
-	
+
 	public FechaHora(Fecha fecha, Hora hora) {
 		super();
 		this.fecha = fecha;
@@ -95,6 +96,19 @@ public class FechaHora implements Comparable<FechaHora>{
 	public FechaHora(int dia, int mes, int anio, int hora, int minuto) {
 		this.fecha = new Fecha(dia, mes, anio);
 		this.hora = new Hora(hora, minuto);
+	}
+
+	public FechaHora(String fecha){
+		String[] valores = fecha.split("\\/");
+		this.fecha = new Fecha(Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]));
+		this.hora = new Hora(0 , 0);
+	}
+
+	public FechaHora(String fecha, String hora){
+		String[] fecha_data = fecha.split("\\/");
+		String[] hora_data = hora.split("\\:");
+		this.fecha = new Fecha(Integer.parseInt(fecha_data[0]), Integer.parseInt(fecha_data[1]), Integer.parseInt(fecha_data[2]));
+		this.hora = new Hora(Integer.parseInt(hora_data[0]) , Integer.parseInt(hora_data[1]));
 	}
 
 	public Fecha getFecha() {

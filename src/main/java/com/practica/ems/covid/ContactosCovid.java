@@ -283,6 +283,7 @@ public class ContactosCovid {
 	}
 	
 	private FechaHora parsearFecha (String fecha) {
+		/**
 		int dia, mes, anio;
 		String[] valores = fecha.split("\\/");
 		dia = Integer.parseInt(valores[0]);
@@ -290,9 +291,12 @@ public class ContactosCovid {
 		anio = Integer.parseInt(valores[2]);
 		FechaHora fechaHora = new FechaHora(dia, mes, anio, 0, 0);
 		return fechaHora;
+		*/
+		return new FechaHora(fecha);
 	}
 	
 	private FechaHora parsearFecha (String fecha, String hora) {
+		/**
 		int dia, mes, anio;
 		String[] valores = fecha.split("\\/");
 		dia = Integer.parseInt(valores[0]);
@@ -304,5 +308,7 @@ public class ContactosCovid {
 		segundo = Integer.parseInt(valores[1]);
 		FechaHora fechaHora = new FechaHora(dia, mes, anio, minuto, segundo);
 		return fechaHora;
+		 */
+		return new FechaHora(fecha, hora);
 	}
 }

@@ -174,72 +174,7 @@ public class ContactosCovid {
         }
 
     }
-/**
-    @SuppressWarnings("resource")
-    public void loadDataFile(String fichero, boolean reset, File archivo, FileReader fr, BufferedReader br, String datas[], String data) {
-        try {
-            // Apertura del fichero y creacion de BufferedReader para poder
-            // hacer una lectura comoda (disponer del metodo readLine()).
-            archivo = new File(fichero);
-            fr = new FileReader(archivo);
-            br = new BufferedReader(fr);
-            if (reset) {
-                this.poblacion = new Poblacion();
-                this.localizacion = new Localizacion();
-                this.listaContactos = new ListaContactos();
-            }
-            /**
-             * Lectura del fichero	línea a línea. Compruebo que cada línea
-             * tiene el tipo PERSONA o LOCALIZACION y cargo la línea de datos en la
-             * lista correspondiente. Sino viene ninguno de esos tipos lanzo una excepción
-             */
-/**
-            while ((data = br.readLine()) != null) {
-                datas = dividirEntrada(data.trim());
-                comprobarCargar(datas);
-                */
-                /**
-                 for (String linea : datas) {
-                 String datos[] = this.dividirLineaData(linea);
-                 if (!datos[0].equals("PERSONA") && !datos[0].equals("LOCALIZACION")) {
-                 throw new EmsInvalidTypeException();
-                 }
-                 if (datos[0].equals("PERSONA")) {
-                 if (datos.length != Constantes.MAX_DATOS_PERSONA) {
-                 throw new EmsInvalidNumberOfDataException("El número de datos para PERSONA es menor de 8");
-                 }
-                 this.poblacion.addPersona(this.crearPersona(datos));
-                 }
-                 if (datos[0].equals("LOCALIZACION")) {
-                 if (datos.length != Constantes.MAX_DATOS_LOCALIZACION) {
-                 throw new EmsInvalidNumberOfDataException(
-                 "El número de datos para LOCALIZACION es menor de 6" );
-                 }
-                 PosicionPersona pp = this.crearPosicionPersona(datos);
-                 this.localizacion.addLocalizacion(pp);
-                 this.listaContactos.insertarNodoTemporal(pp);
-                 }
-                 }
-                 */
-                /**
-            }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            // En el finally cerramos el fichero, para asegurarnos
-            // que se cierra tanto si todo va bien como si salta
-            // una excepcion.
-            try {
-                if (null != fr) {
-                    fr.close();
-                }
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
-        }
-    }
-*/
     public int findPersona(String documento) throws EmsPersonNotFoundException {
         int pos;
         try {
@@ -341,67 +276,9 @@ public class ContactosCovid {
 
     private PosicionPersona crearPosicionPersona(String[] data) {
         PosicionPersona posicionPersona = new PosicionPersona(data);
-        /**
-        PosicionPersona posicionPersona = new PosicionPersona();
-        String fecha = null, hora;
-        float latitud = 0, longitud;
-        for (int i = 1; i < Constantes.MAX_DATOS_LOCALIZACION; i++) {
-            String s = data[i];
-            switch (i) {
-                case 1:
-                    posicionPersona.setDocumento(s);
-                    break;
-                case 2:
-                    fecha = data[i];
-                    break;
-                case 3:
-                    hora = data[i];
-                    posicionPersona.setFechaPosicion(parsearFecha(fecha, hora));
-                    break;
-                case 4:
-                    latitud = Float.parseFloat(s);
-                    break;
-                case 5:
-                    longitud = Float.parseFloat(s);
-                    posicionPersona.setCoordenada(new Coordenada(latitud, longitud));
-                    break;
-            }
-        }
-         */
+
         return posicionPersona;
 
     }
-/**
-    private FechaHora parsearFecha(String fecha) {
-        /**
-         int dia, mes, anio;
-         String[] valores = fecha.split("\\/");
-         dia = Integer.parseInt(valores[0]);
-         mes = Integer.parseInt(valores[1]);
-         anio = Integer.parseInt(valores[2]);
-         FechaHora fechaHora = new FechaHora(dia, mes, anio, 0, 0);
-         return fechaHora;
-         **/
-/**
-        return new FechaHora(fecha);
-    }
-*/
-/**
-    private FechaHora parsearFecha(String fecha, String hora) {
-        /**
-         int dia, mes, anio;
-         String[] valores = fecha.split("\\/");
-         dia = Integer.parseInt(valores[0]);
-         mes = Integer.parseInt(valores[1]);
-         anio = Integer.parseInt(valores[2]);
-         int minuto, segundo;
-         valores = hora.split("\\:");
-         minuto = Integer.parseInt(valores[0]);
-         segundo = Integer.parseInt(valores[1]);
-         FechaHora fechaHora = new FechaHora(dia, mes, anio, minuto, segundo);
-         return fechaHora;
-         */
-/**
-        return new FechaHora(fecha, hora);
-    }*/
+
 }

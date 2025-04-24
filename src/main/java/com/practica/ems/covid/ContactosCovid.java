@@ -386,6 +386,7 @@ public class ContactosCovid {
         return new FechaHora(fecha);
     }
 */
+/**
     private FechaHora parsearFecha(String fecha, String hora) {
         /**
          int dia, mes, anio;
@@ -400,6 +401,7 @@ public class ContactosCovid {
          FechaHora fechaHora = new FechaHora(dia, mes, anio, minuto, segundo);
          return fechaHora;
          */
+/**
         return new FechaHora(fecha, hora);
-    }
+    }*/
 }

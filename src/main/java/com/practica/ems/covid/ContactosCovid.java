@@ -192,7 +192,8 @@ public class ContactosCovid {
              * Lectura del fichero	línea a línea. Compruebo que cada línea
              * tiene el tipo PERSONA o LOCALIZACION y cargo la línea de datos en la
              * lista correspondiente. Sino viene ninguno de esos tipos lanzo una excepción
-             */ /**
+             */
+/**
             while ((data = br.readLine()) != null) {
                 datas = dividirEntrada(data.trim());
                 comprobarCargar(datas);
@@ -219,7 +220,8 @@ public class ContactosCovid {
                  this.listaContactos.insertarNodoTemporal(pp);
                  }
                  }
-                 */ /**
+                 */
+                /**
             }
 
         } catch (Exception e) {
@@ -338,6 +340,8 @@ public class ContactosCovid {
     }
 
     private PosicionPersona crearPosicionPersona(String[] data) {
+        PosicionPersona posicionPersona = new PosicionPersona(data);
+        /**
         PosicionPersona posicionPersona = new PosicionPersona();
         String fecha = null, hora;
         float latitud = 0, longitud;
@@ -363,9 +367,11 @@ public class ContactosCovid {
                     break;
             }
         }
+         */
         return posicionPersona;
-    }
 
+    }
+/**
     private FechaHora parsearFecha(String fecha) {
         /**
          int dia, mes, anio;
@@ -375,10 +381,11 @@ public class ContactosCovid {
          anio = Integer.parseInt(valores[2]);
          FechaHora fechaHora = new FechaHora(dia, mes, anio, 0, 0);
          return fechaHora;
-         */
+         **/
+/**
         return new FechaHora(fecha);
     }
-
+*/
     private FechaHora parsearFecha(String fecha, String hora) {
         /**
          int dia, mes, anio;

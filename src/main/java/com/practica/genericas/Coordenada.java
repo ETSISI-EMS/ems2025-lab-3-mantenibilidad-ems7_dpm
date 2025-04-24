@@ -10,6 +10,13 @@ public class Coordenada {
         // TODO Auto-generated constructor stub
     }
 
+    public Coordenada(String latitud, String longitud) {
+        latitud = latitud.replace(",","");
+        longitud = longitud.replace(",","");
+        this.latitud = Float.parseFloat(latitud);
+        this.longitud = Float.parseFloat(longitud);
+    }
+
     public Coordenada(float latitud, float longitud) {
         super();
         this.latitud = latitud;

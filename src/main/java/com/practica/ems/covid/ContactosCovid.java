@@ -304,6 +304,8 @@ public class ContactosCovid {
     }
 
     private Persona crearPersona(String[] data) {
+        Persona persona = new Persona(data);
+        /**
         Persona persona = new Persona();
         for (int i = 1; i < Constantes.MAX_DATOS_PERSONA; i++) {
             String s = data[i];
@@ -331,7 +333,8 @@ public class ContactosCovid {
                     break;
             }
         }
-        return persona;
+        **/
+         return persona;
     }
 
     private PosicionPersona crearPosicionPersona(String[] data) {

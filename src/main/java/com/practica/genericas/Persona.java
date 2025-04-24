@@ -9,6 +9,17 @@ public class Persona {
 
     }
 
+    public Persona(String[] data) {
+        super();
+        this.nombre = data[2];
+        this.apellidos = data[3];
+        this.documento = data[1];
+        this.email = data[4];
+        this.direccion = data[5];
+        this.fechaNacimiento = new FechaHora(data[7]);
+        this.cp = data[6];
+    }
+
     public Persona(String nombre, String apellidos, String documento, String email, String direccion,
                    FechaHora fechaNacimiento) {
         super();

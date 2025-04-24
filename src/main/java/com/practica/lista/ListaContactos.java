@@ -128,7 +128,7 @@ public class ListaContactos {
 
         }
     }
-
+/**
     private boolean buscarPersona(String documento, NodoPersonas nodo) {
         NodoPersonas aux = nodo;
         while (aux != null) {
@@ -162,7 +162,7 @@ public class ListaContactos {
             return cont;
         }
     }
-
+ */
     public int tamanioLista() {
         return this.size;
     }
